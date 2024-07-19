@@ -1,0 +1,40 @@
+import java.util.Scanner;
+public class ArmStrongNumber {
+    void armStrongNumber() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+        int sum = 0;
+        int cube = 0;
+        int x =0;
+        int a = num;
+        // for printing ArmStrongNumber
+        for (;num!=0;) {
+            x = num%10;
+            cube = x * x * x;
+            sum = sum + cube;
+            num = num/10;
+        }
+        if (sum == a) {
+            System.out.println(sum + " this is an ArmStrongNumber: ");
+        }
+        else{
+            System.out.println(sum + " not an ArmStrongNumber: ");
+        }
+
+    }
+    // for printing the range of ArmStrongNumber
+    void printArmStrongNumber(int start, int end) {
+        System.out.println("Armstrong number in a given range starting from " +start+ " and ending " +end);
+        Scanner sc = new Scanner(System.in);
+        for (int i = start; i <= end; i++) {
+
+        }
+    }
+    public static void main(String[] args) {
+        ArmStrongNumber a = new ArmStrongNumber();
+        a.armStrongNumber();
+        a.printArmStrongNumber(1, 153);
+
+    }
+}
