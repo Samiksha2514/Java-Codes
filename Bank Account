@@ -1,0 +1,64 @@
+import java.util.Scanner;
+public class BankAccount {
+    String accountHolderName;
+    int accountNumber;
+    int balance;
+
+    BankAccount(String accountHolderName, int accountNumber, int balance) {
+        this.accountHolderName = accountHolderName;
+        this.accountNumber = accountNumber;
+        this.balance = balance;
+    }
+
+    public String getAccountHolderName() {
+        return accountHolderName;
+    }
+
+    public void setAccountHolderName(String accountHolderName) {
+        this.accountHolderName = accountHolderName;
+    }
+    public int getAccountNumber() {
+        return accountNumber;
+    }
+    public void setAccountNumber(int accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+    public int getBalance() {
+        return balance;
+    }
+    public void setBalance(int balance) {
+        this.balance = balance;
+    }
+    public void deposit(int amount) {
+        balance += amount;
+        System.out.println("Deposited amount: " + amount);
+    }
+    public void withdraw(int amount) {
+        if(balance >= amount) {
+            balance -= amount;
+            System.out.println("Withdrawn amount: " + amount);
+            System.out.println("Balance: " + balance);
+        }
+        else{
+            System.out.println("Insufficient balance");
+        }
+    }
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter account holder name: ");
+        String accountHolderName = sc.nextLine();
+        System.out.println("Enter account number: ");
+        int accountNumber = sc.nextInt();
+        System.out.println("Enter balance: ");
+        int balance = sc.nextInt();
+
+        BankAccount bankAccount = new BankAccount(accountHolderName, accountNumber, balance);
+        bankAccount.deposit(8000);
+        bankAccount.withdraw(50);
+        String status = (balance >= 500) ? "Minimum balance maintained" : "Minimum balance not maintained";
+        System.out.println("Your account balance is: " + bankAccount.getBalance());
+        System.out.println(status);
+
+    }
+}
