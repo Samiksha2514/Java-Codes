@@ -1,0 +1,34 @@
+import java.util.Scanner;
+public class ComplexNumber {
+    double real;
+    double imag;
+    ComplexNumber(double real, double imag){
+        this.real = real;
+        this.imag = imag;
+    }
+    ComplexNumber(double...real){
+        this.real = real[0];
+        this.imag = real[1];
+    }
+
+    ComplexNumber(){
+        this.real = 0.0;
+        this.imag = 0.0;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Real Part: ");
+        double realPart = sc.nextDouble();
+        System.out.println("Enter the Imaginary Part: ");
+        double imaginaryPart = sc.nextDouble();
+        System.out.println("realPart:" + realPart);
+        System.out.println("imaginaryPart:" + imaginaryPart);
+
+        ComplexNumber complexnumber = new ComplexNumber(realPart,imaginaryPart);
+        System.out.println(complexnumber.real);
+        System.out.println(complexnumber.imag);
+
+    }
+}
