@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class OddEven {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number: ");
+        int even_count = 0;
+        int odd_count = 0;
+        while (true) {
+            int num = sc.nextInt();
+            if (num == -1) {
+                System.out.println("You have entered an invalid number");
+                break;
+            }
+            if (num % 2 == 0) {
+                System.out.println("Even Number: " + num);
+                even_count++;
+            } else {
+                System.out.println("Odd Number: " + num);
+                odd_count++;
+            }
+
+        }
+        System.out.println("Count of Even Number: " + even_count);
+        System.out.println("Count of Odd Number: " + odd_count);
+    }
+}
