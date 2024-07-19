@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class Fibonacci {
+        public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Enter the number: ");
+            int n = sc.nextInt();
+            int fibonacci = 0;
+            int fibonacci1 = 1;
+            System.out.println(fibonacci);
+            System.out.println(fibonacci1);
+            for (int i = 2; i <= n; i++) {
+                int fibonacci2 = fibonacci + fibonacci1;
+                System.out.println(fibonacci2);
+                fibonacci = fibonacci1;
+                fibonacci1 = fibonacci2;
+
+            }
+        }
+}
