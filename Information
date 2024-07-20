@@ -1,0 +1,10 @@
+public class Information {
+    protected int id;
+    protected double d = 35.5;
+    protected int age = (int) d;
+    protected String name;
+    protected boolean isPermanent;
+    public static void main(String[]args){
+        System.out.println("Successfully Started");
+    }
+}
